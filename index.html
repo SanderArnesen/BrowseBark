@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BarkBrowse: Find The Dog Breed For You</title>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <section id="navigation">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/LogoWithName.svg" alt="Brand Logo" />
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link click">
+                    <a href="#" class="nav__link--anchor link__hover--effect">Home</a>
+                </li>
+                <li class="nav__link click">
+                    <a href="attempt.html" class="nav__link--anchor link__hover--effect">Find Your Dog</a>
+                </li>
+                <li class="nav__link click">
+                    <a href="#" class="nav__link--anchor link__hover--effect"><i class="fas fa-adjust"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+    <div id="landing-page">
+        <div class="header__content">
+            <h1 class="title">
+                Everything you need to know about your future best friend!
+            </h1>
+            <h2 class="sub-title">
+                Find the Dog breed for you with <span class="colour__text">Browsebark.</span>
+            </h2>
+
+            <div class="input--wrapper">
+                <select class="searchbar" onchange="showBreedImage(value)" name="breed_selector" id="breed_Selector" aria-placeholder="Select Breed">
+                    <!-- Options are handled by JS -->
+                </select>
+                <a href="attempt.html" class="btn">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </a>
+            </div>
+            <figure class="landing__img">
+                <img src="./assets/DogHuman.svg" alt="Dog and human silhouettes">
+            </figure>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
