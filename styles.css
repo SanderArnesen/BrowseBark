@@ -29,6 +29,7 @@ img{
     border-radius: 24px;
 }
 
+
 .colour__text{
     color: #fe6b7e;
 }
@@ -126,6 +127,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
 
 
@@ -311,8 +313,7 @@ FOOTER
 footer {
     display: flex;
     justify-content: center;
-    background-color: #242424;
-    margin: 36px 0px;   
+    background-color: #242424; 
 }
 
 .footer__row {
