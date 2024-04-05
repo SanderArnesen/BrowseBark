@@ -372,4 +372,9 @@ footer {
         height: auto;
         width: 100%;
     }
+    #temperament{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
