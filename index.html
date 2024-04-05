@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BarkBrowse: Find The Dog Breed For You</title>
-    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarkBrowse: Find The Dog Breed For You</title>
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <section id="navigation">
-        <nav>
-            <figure>
-                <img id="personal-logo" src="./assets/LogoWithName.svg" alt="Brand Logo" />
-            </figure>
-            <ul class="nav__link--list">
-                <li class="nav__link click">
-                    <a href="#" class="nav__link--anchor link__hover--effect">Home</a>
-                </li>
-                <li class="nav__link click">
-                    <a href="attempt.html" class="nav__link--anchor link__hover--effect">Find Your Dog</a>
-                </li>
-                <li class="nav__link click">
-                    <a href="#" class="nav__link--anchor link__hover--effect"><i class="fas fa-adjust"></i></a>
-                </li>
-            </ul>
-        </nav>
-    </section>
+  <header>
+    <nav>
+      <figure>
+        <img id="personal-logo" src="./assets/LogoWithName.svg" alt="Brand Logo">
+      </figure>
+      <ul class="nav__link--list">
+        <li class="nav__link click">
+          <a href="#" class="nav__link--anchor link__hover-effect">Home</a>
+        </li>
+        <li class="nav__link click">
+          <a href="#" class="nav__link--anchor link__hover-effect">Find Your Dog</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+<section id="landing">
+        <div class="container">
+            <div class="row">
     <div id="landing-page">
         <div class="header__content">
             <h1 class="title">
@@ -34,20 +36,92 @@
             <h2 class="sub-title">
                 Find the Dog breed for you with <span class="colour__text">Browsebark.</span>
             </h2>
-
             <div class="input--wrapper">
-                <select class="searchbar" onchange="showBreedImage(value)" name="breed_selector" id="breed_Selector" aria-placeholder="Select Breed">
+                <select class="searchbar" onchange="showBreedImage(value)" oninput="searchBreed(this.value)" name="breed_selector" id="breed_Selector" aria-placeholder="Select Breed">
                     <!-- Options are handled by JS -->
-                </select>
-                <a href="attempt.html" class="btn">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                </a>
-            </div>
+                  </select>
+                <button class="btn" onclick="toggleBreedInfo()">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="breed__info--wrapper" id="breedInfoWrapper" style="display: none;">
+                <div class="breed__info">
+                  <p class="name"><b>Name:</b><p id="name"></p></p>
+                  <p class="breed_group"><b>Breed group:</b><p id="breed_group"></p></p>
+                  <p class="bred_for"><b>Bred for:</b><p id="bred_for"></p></p>
+                  <p class="temperament"><b>Temperament:</b><p id="temperament"></p></p>
+                  <p class="weight"><b>Weight(KG):</b><p id="weight"></p></p>
+                  <p class="height"><b>Height(CM):</b><p id="height"></p></p>
+                  <p class="life_span"><b>Life Span:</b><p id="life_span"></p></p>
+                </div>
+                <div class="breed__image">
+                  <img id="breed_image" alt=""></img>
+                </div>
+              </div>
             <figure class="landing__img">
                 <img src="./assets/DogHuman.svg" alt="Dog and human silhouettes">
             </figure>
-        </div>
     </div>
+</div>
+</div>
+</section>
+
+
+<section id="random__dogs">
+    <div class="container">
+      <div class="row">
+        <div class="title__rd">
+          <h2>Random <span class="colour__text">Dogs</span> Of Today!</h2>
+        </div>
+        <div class="main__content">
+          <div id="grid" class="img__grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="row footer__row">
+        <figure>
+          <img
+            class="footer__logo--img"
+            src="./assets/FullLogo_Transparent_NoBuffer (1).png"
+            alt=""
+          />
+        </figure>
+        <div class="footer__social--list">
+          <a
+            href="https://github.com/SanderArnesen" target="_blank"
+            class="footer__social--link link__hover-effect"
+          >
+            Github
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sander-arnesen-aslaksrud-07421b229/" target="_blank"
+            class="footer__social--link link__hover-effect"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="#"
+            class="footer__social--link link__hover-effect"
+          >
+            Contact
+          </a>
+          <a
+            href="./assets/Genshin Impact Screenshot 2023.09.27 - 11.01.42.54.png" target="_blank"
+            class="footer__social--link link__hover-effect"
+          >
+            Resume
+          </a>
+        </div>
+        <div class="footer__copyright">
+          Copyright © 2024 Sander Arnesen Aslaksrud
+        </div>
+      </div>
+    </div>
+  </footer>
     <script src="app.js"></script>
 </body>
 </html>

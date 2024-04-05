@@ -1,10 +1,10 @@
 
-const url = `https://api.thedogapi.com/v1/breeds`;
+const urlbreed = `https://api.thedogapi.com/v1/breeds`;
 const api_key = `live_0wLzknNYaA8J2pGEVXS0CFnmuPHcIsRNUFRKN0TdlageZWbZoAIEyFRvcQcs2f7i`;
-
+const url = `https://api.thedogapi.com/v1/images/search?limit=9&has_breeds`;
 let storedBreeds = [];
 
-fetch(url, { headers: { "x-api-key": api_key } })
+fetch(urlbreed, { headers: { "x-api-key": api_key } })
   .then((response) => {
     return response.json();
   })
@@ -42,4 +42,39 @@ function showBreedImage(index) {
     storedBreeds[index].height.metric;
     document.getElementById("life_span").textContent =
     storedBreeds[index].life_span;
+}
+
+
+ fetch(url,{headers: {
+      'x-api-key': api_key
+    }})
+ .then((response) => {
+   return response.json();
+ })
+.then((data) => {
+  let imagesData = data;
+  imagesData.map(function(imageData) {
+    
+    let image = document.createElement('img');
+    image.src = `${imageData.url}`;
+        
+    let gridCell = document.createElement('div');
+    gridCell.classList.add('col');
+    gridCell.classList.add('col-lg');
+    gridCell.appendChild(image)
+      
+    document.getElementById('grid').appendChild(gridCell);
+    
+    });
+})
+.catch(function(error) {
+   console.log(error);
+});
+
+
+
+
+function toggleBreedInfo() {
+  const breedInfoWrapper = document.getElementById('breedInfoWrapper');
+  breedInfoWrapper.style.display = breedInfoWrapper.style.display === 'none' ? 'block' : 'none';
 }
